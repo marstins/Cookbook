@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block main %}
+    <div class="title-div">
+        <h1 class="page-title">Results</h1>
+    </div>
+    <form action="/cookbook" method="post" class="query-form">
+        <input type="text" name="parameters" autofocus  placeholder="Type what you want to search">
+        <button type="submit" class="button">Search</button>
+    </form>
+    {% if not recipes%}
+        <h2>{{ message }}</h2>
+    {% else %}
+        <div class="recipe-book-container">
+            <div class="recipe-book">
+                {% for recipe in recipes %}
+                <div class="recipe-container">
+                    <h3>{{ recipe.name.title() }}</h3>
+                    <div class="ingredients">
+                        <p class="section-title">Ingredients:</p>
+                        <pre>{{ recipe.ingredients }}</pre>
+                    </div>
+                    <div class="instructions">
+                        <p class="section-title">Instructions:</p>
+                        <pre>{{ recipe.instructions }}</pre>
+                    </div>
+                    <div class="recipe-details">
+                        <p>Created by: <b>{{ recipe.creator }}</b></p>
+                        <form action="/remove_recipe" method="post">
+                            <input type="hidden" name="removed_recipe" value="{{ recipe.id }}">
+                            <button type="submit" class="button">Remove</button>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

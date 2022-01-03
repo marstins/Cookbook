@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Pantry
+{% endblock %}
+
+{% block main %}
+    <div class="title-div">
+        <h1 class="page-title">My Pantry</h1>
+    </div>
+    <form action="/" method="post" class="query-form">
+        <input type="text" name="item" autofocus placeholder="Type any item ex: tomato, chocolate, etc">
+        <button type="submit" class="button">Add Item</button>
+    </form>
+    {% if not pantry%}
+        <h2>{{ message }}</h2>
+    {% else %}
+        <div class="pantry-container">
+            <div class="pantry">
+                {% for item in pantry %}
+                    <div class="pantry-item">
+                        <p>{{ item.name.capitalize() }}</p>
+                        <form action="/remove_item" method="post">
+                            <input type="hidden" name="removed_item" value="{{ item.id }}">
+                            <button type="submit" class="remove-button"></button>
+                        </form>
+                    </div>
+                {% endfor %}
+            </div>        
+        </div>   
+    {% endif %}
+{% endblock %}

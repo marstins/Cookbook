@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Find Recipes
+{% endblock %}
+
+{% block main %}
+    <div class="title-div">
+        <h1 class="page-title">Find Recipes</h1>
+    </div>
+    <form action="/search_recipes" method="post" class="query-form-author">
+        <div>
+            <input type="text" name="parameters" autofocus placeholder="Type what you want to search">
+            <button type="submit" class="button">Send</button>
+        </div>
+        <div class="checkbox-div">
+            <input type="checkbox" name="created">
+            Created by me
+        </div>
+    </form>
+    {% if not recipes %}
+        <h2>{{ message }}</h2>
+    {% else %}
+        <div class="recipe-book-container">
+            <div class="recipe-book">
+                {% for recipe in recipes %}
+                    <div class="recipe-container">
+                        <h3>{{ recipe.name.title() }}</h3>
+                        <div class="ingredients">
+                            <p class="section-title">Ingredients:</p>
+                            <pre>{{ recipe.ingredients }}</pre>
+                        </div>
+                        <div class="instructions">
+                            <p class="section-title">Instructions:</p>
+                            <pre>{{ recipe.instructions }}</pre>
+                        </div>
+                        <div class="recipe-details">
+                            <p>Created by: <b>{{ recipe.creator }}</b></p>
+                            <form action="/add_recipe" method="post">
+                                <input type="hidden" name="added_recipe" value="{{ recipe.id }}">
+                                <button type="submit" class="button">Add</button>           
+                            </form>
+                        </div>
+                    </div>        
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,746 @@
+:root {
+    --light_green: #D3E8E3;
+    --bright-yellow: #FCCC39;
+    --medium-brown: #9C7E82;
+    --light-rose: #E8C8CB;
+    --dark-blue: #040042;
+    --white: #FAFAFA;
+}
+
+body {
+    font-weight: 500;
+}
+
+/* ============ Typography ============ */
+
+h1, a, p, h2, h3 {
+    color: var(--dark-blue) !important;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 60px !important;
+}
+
+h2, a, p, input, pre, textarea {
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+h2 {
+    margin: 0 10px;
+}
+
+h3 {
+    font-family: 'Pacifico', cursive;
+}
+
+a, p {
+    
+    font-size: 18px !important;
+}
+
+a {
+    font-weight: bold;
+    transition: .2s linear; 
+}
+
+pre {
+    font-size: 18px !important;
+}
+
+/* ============ Navbar ============  */
+
+nav {
+    height: 8vh !important;
+}
+
+@media (min-width: 1440px) {
+    nav {
+        height: 5vh !important;
+    }
+}
+
+ul {
+    height: 100%;
+    list-style: none;
+}
+
+li {
+    width: 150px;
+}
+
+/* =========== Login/Register Menu ========== */
+
+.login-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light_green);
+}
+
+@media (min-width: 1440px) {
+    .login-menu {
+        background: var(--white);
+    }
+}
+
+.login-menu-item {
+    width: 50%;
+    display: inline;
+}
+
+@media (min-width: 1440px) {
+    .login-menu-item {
+        width: 150px
+    }
+}
+
+.login-menu-item a {
+    transition: .2s linear;
+}
+
+.login-menu-item a:hover,
+.login-menu-item a:active {
+    background: var(--white);
+    text-decoration: none !important;
+}
+
+@media (min-width: 1440px) {
+    .login-menu-item a:hover,
+    .main-menu-item a:hover {
+        background: var(--light_green); 
+    }
+}
+
+/* ============== Main Menu =============== */
+
+.main-nav-div {
+    background: var(--white);
+    position: relative;
+}
+
+@media (min-width: 1440px) {
+    .main-menu-container {
+        display: flex;
+        align-items: center;
+        justify-content: start;   
+    }
+}
+
+.menu-logo {
+    margin: 0 5px;
+}
+
+.main-menu-links {
+    display: none;
+    z-index: 9999;
+}
+
+@media (min-width: 1440px) {
+    .main-menu-links {
+        height: 100%;
+        display: flex;
+    }
+}
+
+.main-menu-links ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--white);
+}
+
+@media (min-width: 1440px) {
+    .main-menu-links ul {
+        height: 100%;
+        flex-direction: row;
+    }
+}
+
+.main-menu-links ul li {
+    height: 50px;
+    width: 100%;
+    background: var(--white);
+    display: block;
+    z-index: 9999;
+}
+
+@media (min-width: 1440px) {
+    .main-menu-links ul li {
+        height: 100%;
+        width: 100%;
+        display: inline;
+        padding: 0;
+    }
+}
+
+@media (min-width: 1440px) {
+    .logout-link {
+        margin-left: 50vw;
+    }
+}
+
+.main-menu-item a:hover,
+.main-menu-item a:active {
+    background: var(--light_green);
+    text-decoration: none !important;
+}
+
+/* ========= Burger Menu =========== */
+
+.burger-menu-container {
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--light-rose);
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+@media (min-width: 1440px) {
+    .burger-menu-container {
+        display: none;
+    }
+}
+
+.burger-menu {
+    height: 5px;
+    width: 65%;
+    background: var(--white);
+    border-radius: 25%;
+    position: relative;
+}
+
+.burger-menu::before {
+    content: "";
+    height: 5px;
+    width: 100%;
+    background: var(--white);
+    border-radius: 25%;
+    bottom: 10px;
+    position: absolute;
+}
+
+.burger-menu::after {
+    content: "";
+    height: 5px;
+    width: 100%; 
+    background: var(--white);
+    border-radius: 25%; 
+    position: absolute;
+    top: 10px;
+}
+
+/* ============= Flash Messages ============== */
+
+.msg-container {
+    height: 7vh;
+    width: 100%;
+    background: var(--light-rose);
+    color: var(--dark-blue);
+    font-weight: 500;
+    position: absolute;
+    top: 8%;
+}
+
+@media (min-width: 1440px) {
+    .msg-container {
+        height: 5vh;
+        top: 5%; 
+    }
+}
+
+/* ============ General Styles ============== */
+
+main {
+    height: 92vh !important;
+    background: var(--light_green);
+}
+
+@media (min-width: 1440px) {
+    main {
+        height: 95vh !important;  
+    }
+} 
+
+.form-group input {
+    width: 100%;
+}
+
+.form-group input[type=text],
+.form-group input[type=password] {
+    height: 30px;
+}
+
+.button {
+    height: 40px;
+    width: 100px;
+    background: var(--bright-yellow);
+    color: var(--dark-blue); 
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: 'Tajawal', sans-serif;
+    transition: .2s linear;
+}
+
+.button:hover {
+    background: var(--dark-blue);
+    color: var(--bright-yellow);
+}
+
+.message {
+    padding-left: 20px;
+}
+
+pre {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    white-space: pre-line;
+}
+
+/* ================= Login/Register Pages ========= */
+
+.pill-container {
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--white);
+    padding: 5vh;
+    overflow: hidden;
+}
+
+@media (min-width: 1440px) {
+    .pill-container {
+        height: 60vh;
+        width: 22vw;
+        border-radius: 25px;
+        margin-top: 155px;
+        overflow: hidden;
+    }
+}
+
+.pill-container h1 {
+    margin-bottom: 40px;
+}
+
+.login-container {
+    height: 100%;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.logo-container {
+    width: 100%;
+}
+
+.logo-container img {
+    width: 100%;
+}
+
+/* ================= Main Application ============= */
+
+.main-div {
+    min-height: 92vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-div h2 {
+    text-align: center;
+}
+
+.title-div {
+    margin-bottom: 6vh;
+    margin-top: 1vh;
+}
+
+@media (min-width: 1440px) {
+    .title-div {
+        margin-top: 5vh;
+    }
+}
+
+.query-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3vh;
+}
+
+.query-form input[type=text] {
+    margin-right: 5px;
+}   
+
+@media (min-width: 1440px) {
+    .query-form {
+        justify-content: center;
+    }
+
+    .query-form input[type=text]{
+        width: 300px;
+    }
+
+    .query-form .button {
+        width: 100px;
+        margin-left: 10px;
+    }
+}
+
+/* ==================== Pantry Page =================== */
+
+.pantry-container {
+    height: 50vh;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border-radius: 25px; 
+    overflow-y: scroll;
+    padding: 0 10px;
+}
+
+@media (min-width: 1440px) {
+    .pantry-container {
+        height: 55vh;
+        width: 60vw;
+    }
+}
+
+.pantry {
+    height: 100%;
+    width: 100%;
+}
+
+@media (min-width: 1440px) {
+    .pantry {
+        display: grid;
+        gap: 15px;
+        grid-auto-rows: 50px;
+        grid-template-columns: 1fr 1fr;
+        padding: 20px 0;
+    }
+}
+
+.pantry-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--dark-blue);
+    margin: 0 20px;
+    padding: 15px; 
+}
+
+@media (min-width: 1440px) {
+    .pantry-item {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+.pantry-item p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.pantry form {
+    height: 20px;
+    width: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* ================== Recipe Pages =================== */
+
+.recipe-book-container {
+    height: 55vh;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border-radius: 25px; 
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+@media (min-width: 1440px) {
+    .recipe-book-container {
+        height: 55vh;
+        width: 65vw;
+    }
+}
+
+.recipe-book {
+    height: 100%;
+    width: 100%;
+} 
+
+.recipe-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-bottom: 1px solid var(--dark-blue);
+    padding: 15px; 
+}
+
+@media (min-width: 1440px) {
+    .recipe-container {
+        width: 100%;
+    }
+}
+
+.recipe-container h3 {
+    align-self: center;
+}
+
+.ingredients,
+.instructions {
+    margin: 15px 0;
+}
+
+@media (min-width: 1440px) {
+    .ingredients,
+    .instructions {
+        margin: 10px 0;
+    }
+}
+
+.section-title {
+    font-weight: bold;
+}
+
+.recipe-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    height: 50px;
+}
+
+.recipe-details p {
+    margin: 0;
+    font-size: 16px !important;
+}
+
+/* ================= Create Recipe Page ===================== */
+
+.create-container {
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-container input[type=text] {
+    width: 100%;
+}
+
+.create-container textarea {
+    width: 100%;
+    height: 20vh;
+    margin-top: 10px;
+    overflow-y: scroll;
+    resize: none;
+}
+
+@media (min-width: 1440px) {
+    .create-container textarea {
+        height: auto;
+    }
+}
+
+.created-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ================= Author Toggle and Form ================== */
+
+.query-form-author {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.checkbox-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.checkbox-div input {
+    margin-right: 5px;
+}
+
+.query-form-author input[type=text] {
+    margin-right: 5px;
+    height: 38px;
+}   
+
+@media (min-width: 1440px) {
+    .checkbox-div {
+        align-self: start;
+    }
+
+    .query-form-author {
+        justify-content: center;
+    }
+
+    .query-form-author input[type=text]{
+        width: 300px;
+    }
+
+    .query-form-author .button {
+        width: 100px;
+        margin-left: 10px;
+    }
+}
+
+/* ================== Remove Item Button =================== */
+
+.remove-button {
+    height: 100%;
+    width: 100%;
+    background: var(--light-rose);
+    border: none;
+    border-radius: 100%;
+    position: relative;
+    transition: .2s linear;
+}
+
+.remove-button::after {
+    content:"";
+    height: 4px;
+    width: 14px;
+    background: var(--white);
+    border-radius: 25px;
+    position: absolute;
+    right: 2.5px;
+    top: 8px;
+}
+
+@media (min-width: 1440px) {
+    .remove-button::after {
+        right: 3px !important;
+    }
+}
+
+.remove-button:hover {
+    background: var(--medium-brown);
+}
+
+/* =========== X Close Button =============== */
+
+.close-button {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.x-button {
+    height: 100%;
+    width: 100%;
+    left: 15vw !important;
+    position: relative;
+}
+
+@media (min-width: 1440px) {
+    .x-button {
+        left: 40vw !important;
+    }
+}
+
+.x-button::before {
+    content: "";
+    height: 100%;
+    width: 4px;
+    background: #b8999c;
+    border-radius: 25px;
+    position: absolute;
+    right: 8px;
+    transform: rotate(45deg);
+}
+
+.x-button::after {
+    content: "";
+    height: 100%;
+    width: 4px;
+    background: #b8999c;
+    border-radius: 25px;
+    left: 8px;
+    position: absolute;
+    transform: rotate(-45deg);
+}
+
+/* ================= Error Page ===================== */
+
+.error {
+    font-family: 'Tajawal', sans-serif;
+    text-align: center;
+}
+
+.error-container {
+    height: 50vh;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--white);
+    border-radius: 25px;
+    margin-top: 10vh;
+}
+
+@media (min-width: 1440px) {
+    .error-container {
+        width: 40vw;
+    }
+}
+
+/* ================== Footer ======================= */
+
+footer { 
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+@media (min-width: 1440px) {
+    footer {
+        margin-top: -55px;
+    }
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px !important;
+}
+
+footer a {
+    font-size: 14px !important;
+}

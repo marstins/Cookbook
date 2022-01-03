@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Create Recipe
+{% endblock %}
+
+{% block main %}
+    <div class="title-div">
+        <h1 class="page-title">Create Recipe</h1>
+    </div>
+    <div class="create-container">
+        <form action="/create_recipe" method="post" class="create-form">
+            <input type="text" name="name" autofocus placeholder="Name of your recipe">
+            <textarea name="ingredients" rows="10" placeholder="Here you put all the ingredients needed"></textarea>
+            <textarea name="instructions" rows="10" placeholder="Finally, you write down the instructions"></textarea>
+            <div class="created-details">
+                <div class="checkbox-div">
+                    <input type="checkbox" name="status" value="public">
+                    Public
+                </div>
+                <button type="submit" class="button">Send</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <div class="pill-container">
+        <div class="d-flex justify-content-center align-items-center flex-column login-container">
+            <div class="logo-container d-flex align-items-center justify-content-center mb-5">
+                <img src="../static/images/logo_big.png" alt="cookbook logo">
+            </div>
+            <form action="/login" method="post">
+                <div class="form-group mx-5">
+                    <input aria-label="username" type="text" name="username" autofocus placeholder="Username">
+                </div>
+                <div class="form-group mx-5">
+                    <input aria-label="password" type="password" name="password" placeholder="Password">
+                </div>
+                <div class="form-group mx-5">
+                    <input type="submit" value="Log In" class="button">
+                </div>   
+            </form>
+        </div>
+    </div>
+{% endblock %}
